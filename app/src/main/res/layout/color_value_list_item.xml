@@ -16,21 +16,27 @@
             android:id="@+id/tv_card_color_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/tv_card_color_hex"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_marginBottom="10dp"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/tv_card_color_cmyk"
             android:layout_width="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="monospace"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/tv_card_color_rgb"
             android:layout_width="wrap_content"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="4dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_card_color_hex"
+            android:layout_width="wrap_content"
+            android:fontFamily="monospace"
             android:layout_height="wrap_content" />
 
     </LinearLayout>

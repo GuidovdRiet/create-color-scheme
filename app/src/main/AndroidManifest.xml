@@ -18,7 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ColorConvertResultsActivity"></activity>
+        <activity android:name=".ColorConvertResultsActivity" />
+        <activity android:name=".ColorConvertActivity"></activity>
     </application>
 
 </manifest>
