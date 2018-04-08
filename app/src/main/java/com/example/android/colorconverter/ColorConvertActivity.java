@@ -11,6 +11,7 @@ import android.widget.EditText;
 public class ColorConvertActivity extends AppCompatActivity {
     private EditText mUserColorInput;
     private Button mConvertColorButton;
+    private String mColorConvertType;  
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +24,7 @@ public class ColorConvertActivity extends AppCompatActivity {
         // Get the color from user input in MainActivity
         Intent intentStart = getIntent();
         if(intentStart.hasExtra(Intent.EXTRA_TEXT)) {
-            String colorTypeEntered = intentStart.getStringExtra(Intent.EXTRA_TEXT);
-            System.out.println(colorTypeEntered);
+            mColorConvertType = intentStart.getStringExtra(Intent.EXTRA_TEXT);
         }
 
         mConvertColorButton.setOnClickListener(new View.OnClickListener() {
@@ -34,7 +34,10 @@ public class ColorConvertActivity extends AppCompatActivity {
                 Context context = ColorConvertActivity.this;
                 Class colorResultsActivity = ColorConvertResultsActivity.class;
                 Intent startColorResultsActivity = new Intent(context, colorResultsActivity);
-                startColorResultsActivity.putExtra(Intent.EXTRA_TEXT, insertedColor);
+                Bundle extras = new Bundle();
+                extras.putString("EXTRA_COLOR", insertedColor);
+                extras.putString("EXTRA_COLOR_TYPE", mColorConvertType);
+                startColorResultsActivity.putExtras(extras);
                 startActivity(startColorResultsActivity);
             }
         });

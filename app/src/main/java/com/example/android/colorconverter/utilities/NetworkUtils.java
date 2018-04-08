@@ -15,11 +15,10 @@ import java.util.Scanner;
 
 public class NetworkUtils {
     final static String COLOR_BASE_URL = "http://www.thecolorapi.com/scheme";
-    final static String PARAM_COLOR = "hex";
 
-    public static URL buildUrl(String colorSearchQuery) {
+    public static URL buildUrl(String colorSearchQuery, String colorType) {
         Uri builtUri = Uri.parse(COLOR_BASE_URL).buildUpon()
-                .appendQueryParameter(PARAM_COLOR, colorSearchQuery)
+                .appendQueryParameter(colorType, colorSearchQuery)
                 .build();
 
         URL url = null;

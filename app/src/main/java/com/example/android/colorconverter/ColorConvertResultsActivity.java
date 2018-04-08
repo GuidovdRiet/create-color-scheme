@@ -49,14 +49,14 @@ public class ColorConvertResultsActivity extends AppCompatActivity {
 
         // Get the color from user input in MainActivity
         Intent intentStart = getIntent();
-        if(intentStart.hasExtra(Intent.EXTRA_TEXT)) {
-            String colorEntered = intentStart.getStringExtra(Intent.EXTRA_TEXT);
-            createColorSearchQuery(colorEntered);
-        }
+        Bundle intentExtras = intentStart.getExtras();
+        String colorEntered = intentExtras.getString("EXTRA_COLOR");
+        String colorTypeEntered = intentExtras.getString("EXTRA_COLOR_TYPE");
+        createColorSearchQuery(colorEntered, colorTypeEntered);
     }
 
-    private void createColorSearchQuery(String color) {
-        URL colorConverterUrl = NetworkUtils.buildUrl(color);
+    private void createColorSearchQuery(String color, String colorType) {
+        URL colorConverterUrl = NetworkUtils.buildUrl(color, colorType);
         new ColorQueryTask().execute(colorConverterUrl);
     }
 
