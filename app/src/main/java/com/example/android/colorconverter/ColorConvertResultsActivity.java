@@ -72,8 +72,6 @@ public class ColorConvertResultsActivity extends AppCompatActivity {
 
     public class ColorQueryTask extends AsyncTask<URL, Void, String> {
 
-        private static final String TAG = "The keys";
-
         @Override
         protected void onPreExecute() {
             super.onPreExecute();

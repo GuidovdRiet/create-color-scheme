@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ColorConvertResultsActivity" />
-        <activity android:name=".ColorConvertActivity"></activity>
+        <activity android:name=".ColorConvertActivity" />
+        <activity android:name=".HomeActivity"></activity>
     </application>
 
 </manifest>
