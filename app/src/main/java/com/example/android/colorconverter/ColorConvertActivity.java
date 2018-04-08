@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class ColorConvertActivity extends AppCompatActivity {
+
     private EditText mUserColorInput;
     private Button mConvertColorButton;
     private String mColorConvertType;  
@@ -21,7 +22,7 @@ public class ColorConvertActivity extends AppCompatActivity {
         mUserColorInput = findViewById(R.id.et_color_input);
         mConvertColorButton = findViewById(R.id.convert_color_button);
 
-        // Get the color from user input in MainActivity
+        // Get the color & color type from user input in MainActivity
         Intent intentStart = getIntent();
         if(intentStart.hasExtra(Intent.EXTRA_TEXT)) {
             mColorConvertType = intentStart.getStringExtra(Intent.EXTRA_TEXT);

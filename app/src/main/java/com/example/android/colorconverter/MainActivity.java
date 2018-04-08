@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     private Button mHexButtonTextView;
     private Button mRgbButtonTextView;
     private Button mCmykButtonTextView;
-    private String mButtonValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,37 +31,40 @@ public class MainActivity extends AppCompatActivity {
         mHexButtonTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mButtonValue = HEX_VALUE;
-                Context context = MainActivity.this;
-                Class colorConvertActivityClass = ColorConvertActivity.class;
-                Intent startColorConverter = new Intent(context, colorConvertActivityClass);
-                startColorConverter.putExtra(Intent.EXTRA_TEXT, mButtonValue);
-                startActivity(startColorConverter);
+                setIntent(
+                    MainActivity.this,
+                    ColorConvertActivity.class,
+                    Intent.EXTRA_TEXT,
+                    HEX_VALUE);
             }
         });
 
         mRgbButtonTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mButtonValue = RGB_VALUE;
-                Context context = MainActivity.this;
-                Class colorConvertActivityClass = ColorConvertActivity.class;
-                Intent startColorConverter = new Intent(context, colorConvertActivityClass);
-                startColorConverter.putExtra(Intent.EXTRA_TEXT, mButtonValue);
-                startActivity(startColorConverter);
+                setIntent(
+                    MainActivity.this,
+                    ColorConvertActivity.class,
+                    Intent.EXTRA_TEXT, RGB_VALUE
+                );
             }
         });
 
         mCmykButtonTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mButtonValue = CMYK_VALUE;
-                Context context = MainActivity.this;
-                Class colorConvertActivityClass = ColorConvertActivity.class;
-                Intent startColorConverter = new Intent(context, colorConvertActivityClass);
-                startColorConverter.putExtra(Intent.EXTRA_TEXT, mButtonValue);
-                startActivity(startColorConverter);
+                setIntent(
+                    MainActivity.this,
+                    ColorConvertActivity.class,
+                    Intent.EXTRA_TEXT, CMYK_VALUE
+                );
             }
         });
+    }
+
+    private void setIntent(Context context, Class intentClass, String intentName, String intentData) {
+        Intent startColorConverter = new Intent(context, intentClass);
+        startColorConverter.putExtra(intentName, intentData);
+        startActivity(startColorConverter);
     }
 }
