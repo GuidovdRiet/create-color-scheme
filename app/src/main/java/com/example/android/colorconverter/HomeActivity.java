@@ -32,7 +32,7 @@ public class HomeActivity extends AppCompatActivity {
         mCmykButtonTextView = findViewById(R.id.btn_cmyk_color);
         mBrandIconImageView = findViewById(R.id.iv_icon_brand);
 
-        mBrandIconImageView.setImageResource(R.drawable.brand_icon);
+        mBrandIconImageView.setImageResource(R.drawable.cd_brand_color_type_picker_icon);
 
         mHexButtonTextView.setOnClickListener(new View.OnClickListener() {
             @Override

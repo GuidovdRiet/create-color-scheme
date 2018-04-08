@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 public class ColorConvertActivity extends AppCompatActivity {
 
     private EditText mUserColorInput;
     private Button mConvertColorButton;
-    private String mColorConvertType;  
+    private String mColorConvertType;
+    private ImageView mColorInputIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,9 @@ public class ColorConvertActivity extends AppCompatActivity {
 
         mUserColorInput = findViewById(R.id.et_color_input);
         mConvertColorButton = findViewById(R.id.convert_color_button);
+        mColorInputIcon = findViewById(R.id.iv_icon_brand_input);
+
+        mColorInputIcon.setImageResource(R.drawable.cd_brand_color_input_icon);
 
         // Get the color & color type from user input in MainActivity
         Intent intentStart = getIntent();

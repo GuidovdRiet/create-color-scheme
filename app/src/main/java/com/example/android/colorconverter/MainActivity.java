@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mLogoImageView = findViewById(R.id.img_brand);
+        mLogoImageView = findViewById(R.id.iv_brand);
         mLogoImageView.setImageResource(R.drawable.cd_brand);
 
         new Handler().postDelayed(new Runnable() {

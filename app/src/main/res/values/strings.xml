@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Color Converter</string>
     <string name="error_message_color">Failed to get a result, try again.</string>
-    <string name="button_text_convert_color">Convert color</string>
+    <string name="button_text_convert_color">Start digging</string>
     <string name="button_text_insert_color">Insert color</string>
 </resources>
