@@ -1,4 +1,8 @@
 <resources>
+    <!-- prefrences -->
+    <string name="action_settings">Settings</string>
+
+    <!-- Global -->
     <string name="app_name">Color Converter</string>
     <string name="error_message_color">Failed to get a result, try again.</string>
     <string name="button_text_convert_color">Start digging</string>
