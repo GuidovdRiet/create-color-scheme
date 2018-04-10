@@ -2,16 +2,16 @@ package com.example.android.colorconverter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import java.util.zip.Inflater;
+import com.example.android.colorconverter.settings.SettingsActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -77,6 +77,17 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.color_scheme_converter_menu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            Intent startSettings = new Intent(this, SettingsActivity.class);
+            startActivity(startSettings);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void setIntent(Context context, Class intentClass, String intentName, String intentData) {
