@@ -7,4 +7,8 @@
     <string name="error_message_color">Failed to get a result, try again.</string>
     <string name="button_text_convert_color">Start digging</string>
     <string name="button_text_insert_color">Insert color</string>
+
+    <string name="pref_show_hex_color">Show hex color</string>
+    <!-- Not visible for user to translate is false -->
+    <string name="pref_show_hex_key" translatable="false">show_hex</string>
 </resources>

@@ -24,13 +24,8 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 Intent homeIntent = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(homeIntent);
+                finish();
             }
         }, SPLASH_TIME_OUT);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        finish();
     }
 }
