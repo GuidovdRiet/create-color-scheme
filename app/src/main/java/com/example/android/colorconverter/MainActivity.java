@@ -111,24 +111,46 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     private void setupSharedPreferences() {
         SharedPreferences sharedPreferences = PreferenceManager.
                 getDefaultSharedPreferences(this);
+
         setShowButton(
                 sharedPreferences.getBoolean(getString(R.string.pref_show_hex_key),
                 getResources().getBoolean(R.bool.pref_show_hex_default)),
                 mHexButton);
 
-        setShowButton(true, mRgbButton);
-        setShowButton(true, mCmykButton);
+        setShowButton(
+                sharedPreferences.getBoolean(getString(R.string.pref_show_rgb_color),
+                getResources().getBoolean(R.bool.pref_show_rgb_default)),
+                mRgbButton);
+
+        setShowButton(
+                sharedPreferences.getBoolean(getString(R.string.pref_show_cmyk_color),
+                        getResources().getBoolean(R.bool.pref_show_cmyk_default)),
+                mCmykButton);
 
         sharedPreferences.registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+
         if (key.equals(getString(R.string.pref_show_hex_key))) {
             setShowButton(sharedPreferences.getBoolean(key,
-                    getResources().getBoolean(R.bool.pref_show_hex_default)),
-                    mHexButton);
+                getResources().getBoolean(R.bool.pref_show_hex_default)),
+                mHexButton);
         }
+
+        if (key.equals((getString(R.string.pref_show_rgb_key)))) {
+            setShowButton(
+                sharedPreferences.getBoolean(key, getResources().getBoolean(R.bool.pref_show_rgb_default)),
+                mRgbButton);
+        }
+
+        if (key.equals((getString(R.string.pref_show_cmyk_key)))) {
+            setShowButton(
+                    sharedPreferences.getBoolean(key, getResources().getBoolean(R.bool.pref_show_cmyk_default)),
+                    mCmykButton);
+        }
+
     }
 
     @Override
