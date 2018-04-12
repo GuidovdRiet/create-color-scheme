@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
     private ImageView mBrandIconImageView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,8 +109,12 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
     // Set default setup for settings screen
     private void setupSharedPreferences() {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        setShowButton(sharedPreferences.getBoolean(getString(R.string.pref_show_hex_key), getResources().getBoolean(R.bool.pref_show_hex_default)), mHexButton);
+        SharedPreferences sharedPreferences = PreferenceManager.
+                getDefaultSharedPreferences(this);
+        setShowButton(
+                sharedPreferences.getBoolean(getString(R.string.pref_show_hex_key),
+                getResources().getBoolean(R.bool.pref_show_hex_default)),
+                mHexButton);
 
         setShowButton(true, mRgbButton);
         setShowButton(true, mCmykButton);
@@ -122,13 +125,16 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if (key.equals(getString(R.string.pref_show_hex_key))) {
-            setShowButton(sharedPreferences.getBoolean(key, getResources().getBoolean(R.bool.pref_show_hex_default)), mHexButton);
+            setShowButton(sharedPreferences.getBoolean(key,
+                    getResources().getBoolean(R.bool.pref_show_hex_default)),
+                    mHexButton);
         }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        PreferenceManager.getDefaultSharedPreferences(this).unregisterOnSharedPreferenceChangeListener(this);
+        PreferenceManager.getDefaultSharedPreferences(this).
+                unregisterOnSharedPreferenceChangeListener(this);
     }
 }

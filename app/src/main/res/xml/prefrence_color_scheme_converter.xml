@@ -6,4 +6,16 @@
         android:title="@string/pref_show_hex_color"
         android:summaryOn="Shown"
         android:summaryOff="Hidden" />
+    <CheckBoxPreference
+        android:defaultValue="@bool/pref_show_rgb_default"
+        android:key="@string/pref_show_rgb_key"
+        android:title="@string/pref_show_rgb_color"
+        android:summaryOn="Shown"
+        android:summaryOff="Hidden" />
+    <CheckBoxPreference
+        android:defaultValue="@bool/pref_show_cmyk_default"
+        android:key="@string/pref_show_cmyk_key"
+        android:title="@string/pref_show_cmyk_color"
+        android:summaryOn="Shown"
+        android:summaryOff="Hidden" />
 </PreferenceScreen>

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <bool name="pref_show_hex_default">true</bool>
+    <bool name="pref_show_rgb_default">true</bool>
+    <bool name="pref_show_cmyk_default">true</bool>
 </resources>
